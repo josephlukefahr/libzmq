@@ -138,7 +138,7 @@ int zmq::norm_engine_t::init (const char *network_, bool send, bool recv)
           norm_session,
           true); // port reuse doesn't work for non-connected unicast
         NormSetLoopback (norm_session,
-                         true); // needed when multicast users on same machine
+                         false); // needed when multicast users on same machine
         if (NULL != ifacePtr) {
             // Note a bad interface may not be caught until sender or receiver start
             // (Since sender/receiver is not yet started, this always succeeds here)
